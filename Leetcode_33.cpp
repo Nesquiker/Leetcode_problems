@@ -145,3 +145,44 @@ private:
         return output;
     }
 
+TEST_CASE("33. Search in Rotated Sorted Array")
+{
+    Solution tester;
+
+    std::vector<int> nums {4,5,6,7,0,1,2};
+    int target = 0;
+    int check = 4;
+    auto answer = tester.search(nums, target);
+    CHECK(answer == check);
+
+    nums = {4,5,6,7,0,1,2};
+    target = 3;
+    check = -1;
+    answer = tester.search(nums, target);
+    CHECK(answer == check);
+
+    nums = {1};
+    target = 0;
+    check = -1;
+    answer = tester.search(nums, target);
+    CHECK(answer == check);
+
+    nums = {1};
+    target = 1;
+    check = 0;
+    answer = tester.search(nums, target);
+    CHECK(answer == check);
+
+    nums = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    target = 0;
+    check = 0;
+    answer = tester.search(nums, target);
+    CHECK(answer == check);
+
+    nums = {8, 9, 2, 3, 4};
+    target = 9;
+    check = 1;
+    answer = tester.search(nums, target);
+    CHECK(answer == check);
+
+}
