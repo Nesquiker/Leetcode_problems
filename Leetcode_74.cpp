@@ -15,6 +15,19 @@ as a binary search. The following algorithm should operate in O(logn) time.
 2. Do a binary search of the targot row for the target value.
 3. Return the location. If we have a location return true else false.
 
+
+133 / 133 test cases passed.
+Status: Accepted
+Runtime: 0 ms
+Memory Usage: 9.5 MB
+
+Your runtime beats 100.00 % of cpp submissions.
+Runtime (ms)Distribution (%)
+
+Your memory usage beats 51.30 % of cpp submissions.
+Memory (KB)Distribution (%)
+
+
 */
 
 
