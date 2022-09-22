@@ -56,11 +56,11 @@ Steps:
 3. Implement a binary search of the localized indexes and return the result in the original index system.
 
 Took me a while to wrap my head around the binary search for the largest value in the un-rotated array. After that the next challenge was how
-do we take that and get a efficient binary sort. That required the creation of a new local index system with mutation to the system and out
-of the local index numbering which is solved in convert_to_base and convert_from_rot.
+do we take that and get a efficient binary sort. That required the creation of a new local index system which is made possible by convert_to_base and 
+convert_from_rot functions.
 
-Time Complexity: O(log(n)) Everything that is non constant is in logn time.
-Space: constant, no new arrays etc...
+Time Complexity: O(log(n)) Everything that is non constant is in logn time (binary searches).
+Space: constant, no new arrays.
 */
 
 #include "doctest.h"
