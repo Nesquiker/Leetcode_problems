@@ -52,6 +52,35 @@ Space == constant extra space.
 Notes - encountered overflow error on the last test in the test_cases. This resulted in an incorrect submission. Did not properly anticipate
 that this term: #output += (upper_it - current_it) * mults_of_guess;# would overflow int as an extremely low guess with an extremely high value
 was unforeseen. Need to consider adding test cases in future problems that may cause overflow.
+
+Is this optimal? NO. The upper bound check was unnecessary. This can be O(n * log(h)) if instead of the BinaryGuessResult function a simple loop with
+some arithmetic would have given the same result.
+
+    long long BinaryGuessResult(std::vector<int>& piles, const long long guess, const int h) {
+        auto current_it = piles.begin();
+        int current_guess = guess;
+        int mults_of_guess = 1;
+        long long output = 0;
+        while (output <= h) {
+            auto upper_it = std::upper_bound(current_it, piles.end(), current_guess);
+            output += (upper_it - current_it) * mults_of_guess;
+            if (upper_it == piles.end())
+                break;
+            mults_of_guess = *upper_it / guess + (*upper_it % guess != 0);
+            current_guess = guess * mults_of_guess;
+            current_it = upper_it;
+        }
+        return output;
+    }
+    
+    Is equivalent to:
+    
+    int result = 0;
+    for (auto pile : piles) {
+        result += pile / guess + (pile % guess != 0);
+    }
+
+... More thinking less typing.
 */
 
 #include "doctest.h"
