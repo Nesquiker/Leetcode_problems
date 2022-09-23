@@ -4,13 +4,6 @@ Begin Description:
 703. Kth Largest Element in a Stream
 Easy
 
-3460
-
-2015
-
-Add to List
-
-Share
 Design a class to find the kth largest element in a stream. Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
 Implement KthLargest class:
@@ -49,7 +42,7 @@ End Description.
 
 The problem is basically to use a heap of k values. The heap should be a min heap and return the smallest value. The only thing that might get someone
 would be the null case where they do not initialize with any values. If you were to intitialize your heap / priority queue like I did that would lead
-to an error. Because of this I added minimum integers to nums. The algorithm still got 83% on speed with this maybe because I didn't need to check the size of the 
+to an error. Because of this I added minimum integers to nums. The algorithm still got 83% on speed with this, maybe because I didn't need to check the size of the 
 heap on every add.
 
 Note:
@@ -62,6 +55,9 @@ Steps:
 2. Sort nums.
 3. Create priority_queue.
 4. Make adds (just use the queue).
+
+Time complexity: O(nlogn) for the setup, O(logn) for add.
+Space: k extra space.
 
 */
 
